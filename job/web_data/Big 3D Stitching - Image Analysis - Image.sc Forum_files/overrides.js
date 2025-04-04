@@ -1,0 +1,1 @@
+I18n._overrides = {"en":{"js.dates.long_date_with_year_with_linebreak":"MMM D, YYYY \u003cbr\u003eLT","js.dates.long_date_with_year_without_time":"MMM D, YYYY","js.dates.long_date_with_year":"MMM D, YYYY LT","js.dates.tiny.date_year":"MMM YYYY","js.dates.medium.date_year":"MMM D, YYYY"}};
