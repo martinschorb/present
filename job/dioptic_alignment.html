@@ -25,7 +25,26 @@
 			<div class="slides">
 				<section data-markdown>
 					<textarea data-template>
+
+						### Martin
+
+						| | | |
+						|--|--|--|
+						|![img](img/sax.jpg)|![img](img/rad.jpg)|![img](img/garten.png)|
+
+						---
+
+						### Martin (Karriere)
+
+						| | | | |
+						|--|--|--|--|
+						|<img style="display: inline; width: 2700px" src="./img/physik.jpg">|<img style="display: inline; width: 2000px" src="./img/fm_lego.webp">|<img style="display: inline; width: 2200px" src="./img/tem_lego.jpg">|![img](img/programmer.png)|
+
+						---
+
 						### Implementierung eines Frameworks zur Alignierung von Volumen-Bilddaten
+
+						----
 
 						Martin Schorb, 10.4.2025
 						---
@@ -76,7 +95,7 @@
 				</section>
 
 				<section data-background-iframe="./web_data/Big 3D Stitching - Image Analysis - Image.sc Forum.html" data-background-interactive>
-					<div style="position: absolute; width: 300px; left: -150px ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: left;">
+					<div style="position: relative; width: 20%; left: -7% ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: left;">
 						<h2>Kontakt:</h2>
 						<p style="font-family: courier; font-size: 17pt">image.sc</p>
 						<p>Erreichbarkeit der Entwickler?</p>
@@ -84,26 +103,25 @@
 				</section>
 				<section data-auto-animate>
 					<h3>Architektur</h3>
-						<img style="display: inline;margin: 0;" src="./img/Render_scheme1.svg">
-				</section>
-				<section data-auto-animate>
-				<h3>Architektur</h3>
-						<img style="display: inline;margin: 0;" src="./img/Render_scheme0.svg">
+					<div class="r-stack">
+						<img class="fragment" style="display: inline; margin: 0;" class="r-stretch" src="./img/Render_scheme1.svg">
+						<img class="fragment" style="display: inline; margin: 0;" class="r-stretch" src="./img/Render_scheme0.svg">
+					</div>
 				</section>
 
 				<section data-auto-animate>
 					<h3>Render web services</h3>
-						<img style="margin: 0" src="./img/render_web1.png">
+						<img style="margin: 0" class="r-stretch" src="./img/render_web1.png">
 				</section>
 				<section data-auto-animate>
 					<h3>Render web services</h3>
-						<img style="margin: 0" src="./img/render_web2.png">
+						<img style="margin: 0" class="r-stretch" src="./img/render_web2.png">
 				</section>
 
 				<section data-background-iframe="https://dash.gallery/dash-covid-xray/" data-background-interactive>
-					<div style="position: absolute; width: 500px; left:500px; bottom: 210px ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">
+					<div style="position: relative; width: 43%; left:50%; bottom: 200pt ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">
 						<h3><span class="fragment highlight-red">Dash</span></h3>
-						<p>Python framework for interactive data apps.</p>
+						<p>Python framework for interactive data apps</p>
 					</div>
 				</section>
 
@@ -114,6 +132,134 @@
 <!--					</div>-->
 				</section>
 
+				<section data-auto-animate>
+					<h3>workflow</h3>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow1.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow2.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow3.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow4.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow5.svg"></p>
+
+				</section>
+
+				<section>
+					<h3>Backend Code</h3>
+					 <ul>
+						  <li><p>Python API für Render (API und client Scripts)</p></li>
+						  <li><p class="fragment highlight-current-blue" data-fragment-index="3">Python Paket zur Anwendung</p></li>
+						  <li><p class="fragment highlight-current-blue" data-fragment-index="2">Launcher für lokale, HPC, Spark</p></li>
+					 </ul>
+
+				</section>
+
+				<section>
+					<section data-markdown>
+						<script type="text/template">
+							### `argschema`
+							entwickelt am Allen Institute
+							- verifizieren von Input-Parametern (Typ, Wert)
+							- Parameter
+								- Funktionsparameter <!-- .element: class="fragment" -->
+								- Dictionary <!-- .element: class="fragment" -->
+								- Kommandozeile (argparse) <!-- .element: class="fragment" -->
+								- JSON Datei <!-- .element: class="fragment" -->
+							- automatische Dokumentation (Sphinx) <!-- .element: class="fragment" -->
+
+						</script>
+						</section>
+						<section  data-markdown>
+							<script type="text/template">
+							### `argschema` - Use case
+							- JuPyter NB gebastelt , läuft, static filenames (check?)<!-- .element: class="fragment" -->
+							- Variablen nach oben, Funktions-Wrap <!-- .element: class="fragment" -->
+							- Kommandozeile wäre schön (argparse), Validierung wieder raus <!-- .element: class="fragment" -->
+							- Einbetten in andere Module, argparse-Linien kopieren <!-- .element: class="fragment" -->
+							- Parameter für Batch-Processing? <!-- .element: class="fragment" -->
+							</script>
+						</section>
+				</section>
+
+
+
+
+				<section data-markdown style="width:120%;left:-14% ;font-size:26pt">
+					<script type="text/template" >
+						#### `argschema` - Beispiel
+
+						<table style="width:110%">
+<tr>
+<th style="width:43%">Klasse</th>
+<th style="width:52%">Schema</th>
+</tr>
+<tr>
+<td>
+
+```python
+from argschema import ArgSchemaParser
+from .schema import TwoNumbers
+
+class Multiply(ArgSchemaParser):
+    default_schema = TwoNumbers
+    def run(self):
+        num1 = self.args.get("a")
+        num2 = self.args.get("b")
+
+        print(str(num1 * num2))
+
+```
+
+</td>
+<td>
+
+```python
+from aschema.schemas import ArgSchema
+from aschema.fields import Int
+
+class TwoNumbers(ArgSchema):
+  a = Int(default=2,
+  	  required=True,
+	  description='First number (int).')
+  b = Int(default=3,
+	  required=True,
+	  description='Second number (int).')
+```
+
+</td>
+</tr>
+</table>
+
+						```Python
+						t1 = Multiply()
+						t1.run()
+							6
+						t2 = Multiply(input_data={'a':5})
+						t2.run()
+							15
+						t3 = Multiply(input_data={'a':"some string"})
+							marshmallow.exceptions.ValidationError: {'a': ['Not a valid integer.']}
+						```
+
+
+						```bash
+python scratch_1.py  --h
+usage: scratch_1.py [-h] [--a A] [--b B] [--input_json INPUT_JSON] [--output_json OUTPUT_JSON] [--log_level LOG_LEVEL]
+
+options:
+  -h, --help            show this help message and exit
+
+TwoNumbers:
+  --a A                 First number (int). (default=2) (REQUIRED)
+  --b B                 Second number (int). (default=3) (REQUIRED)
+  --input_json INPUT_JSON
+                        file path of input json file
+  --output_json OUTPUT_JSON
+                        file path to output json file
+  --log_level LOG_LEVEL
+                        set the logging level of the module (default=ERROR)
+
+						```
+					</script>
+				</section>
 
 
 				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
