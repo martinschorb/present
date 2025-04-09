@@ -26,6 +26,19 @@
 				<section data-markdown>
 					<textarea data-template>
 
+						### Implementierung eines Frameworks zur Alignierung von Volumen-Bilddaten
+
+						----
+
+						Martin Schorb, 10.4.2025
+						---
+
+						### Serial Block-face scanning EM
+
+						![img](./img/sbem_01.png)
+
+						---
+
 						### Martin
 
 						| | | |
@@ -117,14 +130,18 @@
 					<h3>Render web services</h3>
 						<img style="margin: 0" class="r-stretch" src="./img/render_web2.png">
 				</section>
+				<section>
+					<section data-background-iframe="https://dash.gallery/dash-covid-xray/" data-background-interactive>
+						<div style="position: relative; width: 43%; left:50%; bottom: 200pt ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">
+							<h3><span class="fragment highlight-red">Dash</span></h3>
+							<p>Python framework for interactive data apps</p>
+						</div>
+					</section>
+					<section data-background-iframe="https://dash.plotly.com/minimal-app" data-background-interactive>
 
-				<section data-background-iframe="https://dash.gallery/dash-covid-xray/" data-background-interactive>
-					<div style="position: relative; width: 43%; left:50%; bottom: 200pt ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">
-						<h3><span class="fragment highlight-red">Dash</span></h3>
-						<p>Python framework for interactive data apps</p>
-					</div>
+					</section>
+
 				</section>
-
 				<section data-background-iframe="http://127.0.0.1:8050/" data-background-interactive>
 <!--					<div style="position: absolute; width: 500px; left:500px; bottom: 210px ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">-->
 <!--						<h3><span class="fragment highlight-red">Dash</span></h3>-->
@@ -151,7 +168,25 @@
 					 </ul>
 
 				</section>
+				<section>
+					<section data-markdown>
+						<script type="text/template" >
 
+### Resultate
+
+- Implementierung von SBEM (u.a.) Importern
+- parallel auf Cluster <!-- .element: class="fragment" -->
+- Dauer: Wochen &#128201; Stunden &#128640; <!-- .element: class="fragment" -->
+- Bedienung über Web-UI <!-- .element: class="fragment" -->
+
+---
+
+### große TEM Mosaike
+![img](img/serialem_render.png)
+
+						</script>
+					</section>
+				</section>
 				<section>
 					<section data-markdown>
 						<script type="text/template">
@@ -172,11 +207,18 @@
 							<ul>
 								<li><p>JuPyter NB gebastelt , läuft, static filenames (check?)</p></li>
 								<li><p class="fragment">Variablen nach oben, Funktions-Wrap</p></li>
-								<li><p class="fragment">Kommandozeile wäre schön (argparse), Validierung wieder raus</p></li>
+								<li><p class="fragment">Kommandozeile wäre schön (argparse), Validierung?</p></li>
 								<li><p class="fragment">Einbetten in andere Module, argparse-Code?</p></li>
-								<li><p class="fragment">Parameter für Batch-Processing?</p></li>
+								<li><p class="fragment">Parameter für Batch-Processing? (JSON)</p></li>
 
 							</ul>
+							<aside class="notes">
+								- file doesn't exist, and your code doesn't check for the existence<br>
+								- argparse, help<br>
+								- change your original module a little bit, fix up the others?
+
+
+							</aside>
 						</section>
 				</section>
 
@@ -240,6 +282,9 @@ class TwoNumbers(ArgSchema):
 							marshmallow.exceptions.ValidationError: {'a': ['Not a valid integer.']}
 						```
 
+						<!-- .element: class="fragment" -->
+
+
 					</script>
 					</section>
 
@@ -249,6 +294,12 @@ class TwoNumbers(ArgSchema):
 				<section data-markdown style="width:120%; left:-14% ;font-size:25pt">
 					<script type="text/template" >
 					### Kommandozeile
+```Python
+if __name__ == "__main__":
+    k=Multiply()
+    k.run()
+```
+
 
 ```ini
 
@@ -280,18 +331,18 @@ $ python argsch_demo.py  --input_json params.json
 	10
 
 ```
+					<!-- .element: class="fragment" -->
+
 					</script>
 				</section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://revealjs.com/speaker-view/">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+				<section data-markdown>
+					<textarea data-template>
+						### NGFF
+						![img](img/ome-zarr1.webp)
+					</textarea>
 				</section>
+
 
 			</div>
 
