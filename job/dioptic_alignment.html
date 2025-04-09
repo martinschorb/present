@@ -26,7 +26,7 @@
 				<section data-markdown>
 					<textarea data-template>
 
-						### Implementierung eines Frameworks zur Alignierung von Volumen-Bilddaten
+						### Implementierung eines Frameworks zum Alignment von Volumen-Bilddaten
 
 						----
 
@@ -49,7 +49,7 @@
 
 						---
 
-						### Implementierung eines Frameworks zur Alignierung von Volumen-Bilddaten
+						### Implementierung eines Frameworks zum Alignment von Volumen-Bilddaten
 
 						----
 
@@ -79,12 +79,12 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						### Ist-Zustand:
-						- Alignment von: <br>
-						2D Mosaik (10&times;10) 3D Schnitte (~10.000)
+						### Ist-Zustand
+						- Alignment von<br>
+						2D: Mosaik (10&times;10) - 3D: Schnitte (~10.000)
 						- <p>von Hand in TrakEM (Fiji) importiert</p>
-						- <p>Dauer Alignment: mehrere Wochen - 💻</p>
-						- <p>manuelle Konvertierung (Tage)</p>
+						- <p>Dauer Alignment - 💻: mehrere Wochen</p>
+						- <p>manuelle Konvertierung: Tage</p>
 
 						---
 
@@ -116,6 +116,16 @@
 				</section>
 
 				<section data-auto-animate>
+					<h3>workflow</h3>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow1.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow2.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow3.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow4.svg"></p>
+					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow5.svg"></p>
+
+				</section>
+
+				<section data-auto-animate>
 					<h3>Render web services</h3>
 						<img style="margin: 0" class="r-stretch" src="./img/render_web1.png">
 				</section>
@@ -135,6 +145,7 @@
 					</section>
 
 				</section>
+
 				<section data-background-iframe="http://127.0.0.1:8050/" data-background-interactive>
 <!--					<div style="position: absolute; width: 500px; left:500px; bottom: 210px ; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: #bcd5ee; color: #555; padding: 20px; font-size: 20px; text-align: center;">-->
 <!--						<h3><span class="fragment highlight-red">Dash</span></h3>-->
@@ -142,21 +153,11 @@
 <!--					</div>-->
 				</section>
 
-				<section data-auto-animate>
-					<h3>workflow</h3>
-					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow1.svg"></p>
-					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow2.svg"></p>
-					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow3.svg"></p>
-					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow4.svg"></p>
-					<p class="fragment fade-in-then-semi-out"><img style="margin: 0" src="./img/render_flow5.svg"></p>
-
-				</section>
-
 				<section>
 					<h3>Backend Code</h3>
 					 <ul>
-						  <li><p>Python API für Render (API und client Scripts)</p></li>
-						  <li><p class="fragment highlight-current-blue" data-fragment-index="3">Python Paket zur Anwendung</p></li>
+						  <li><p>Python-API für Render (API und client scripts)</p></li>
+						  <li><p class="fragment highlight-current-blue" data-fragment-index="3">Python-Paket zur Anwendung</p></li>
 						  <li><p class="fragment highlight-current-blue" data-fragment-index="2">Launcher für lokale tasks, HPC, Spark</p></li>
 					 </ul>
 
@@ -186,11 +187,10 @@
 							### `argschema`
 							entwickelt am Allen Institute
 							- verifizieren von Input-Parametern (Typ, Wert)
-							- Parameter
-								- Funktionsparameter <!-- .element: class="fragment" -->
+							- Parameter <!-- .element: class="fragment" -->
 								- Dictionary <!-- .element: class="fragment" -->
 								- Kommandozeile (argparse) <!-- .element: class="fragment" -->
-								- JSON Datei <!-- .element: class="fragment" -->
+								- JSON-Datei <!-- .element: class="fragment" -->
 							- automatische Dokumentation (Sphinx) <!-- .element: class="fragment" -->
 
 						</script>
