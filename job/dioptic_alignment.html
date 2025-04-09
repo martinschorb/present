@@ -33,17 +33,11 @@
 						Martin Schorb, 10.4.2025
 						---
 
-						### Serial Block-face scanning EM
-
-						![img](./img/sbem_01.png)
-
-						---
-
 						### Martin
 
 						| | | |
 						|--|--|--|
-						|![img](img/sax.jpg)|![img](img/rad.jpg)|![img](img/garten.png)|
+						|<img style="display: inline; width: 600px" src="./img/sax.jpg">|![img](img/rad.png)|<img style="display: inline; width: 1100px" src="./img/garten.png">|
 
 						---
 
@@ -88,10 +82,9 @@
 						### Ist-Zustand:
 						- Alignment von: <br>
 						2D Mosaik (10&times;10) 3D Schnitte (~10.000)
-						- von Hand in TrakEM (Fiji) importiert
-						- Dauer Alignment: <br>
-						mehrere Wochen (lokale Workstation)
-						- manuelle Konvertierung (Tage)
+						- <p>von Hand in TrakEM (Fiji) importiert</p>
+						- <p>Dauer Alignment: mehrere Wochen - 💻</p>
+						- <p>manuelle Konvertierung (Tage)</p>
 
 						---
 
@@ -164,7 +157,7 @@
 					 <ul>
 						  <li><p>Python API für Render (API und client Scripts)</p></li>
 						  <li><p class="fragment highlight-current-blue" data-fragment-index="3">Python Paket zur Anwendung</p></li>
-						  <li><p class="fragment highlight-current-blue" data-fragment-index="2">Launcher für lokale, HPC, Spark</p></li>
+						  <li><p class="fragment highlight-current-blue" data-fragment-index="2">Launcher für lokale tasks, HPC, Spark</p></li>
 					 </ul>
 
 				</section>
@@ -260,7 +253,7 @@ from aschema.fields import Int
 
 class TwoNumbers(ArgSchema):
   a = Int(default=2,
-  	  required=True,
+	  required=True,
 	  description='First number (int).')
   b = Int(default=3,
 	  required=True,
@@ -275,9 +268,17 @@ class TwoNumbers(ArgSchema):
 						t1 = Multiply()
 						t1.run()
 							6
+						```
+
+						<!-- .element: class="fragment" -->
+						```Python
 						t2 = Multiply(input_data={'a':5})
 						t2.run()
 							15
+						```
+
+						<!-- .element: class="fragment" -->
+						```Python
 						t3 = Multiply(input_data={'a':"some string"})
 							marshmallow.exceptions.ValidationError: {'a': ['Not a valid integer.']}
 						```
@@ -291,7 +292,7 @@ class TwoNumbers(ArgSchema):
 
 
 
-				<section data-markdown style="width:120%; left:-14% ;font-size:25pt">
+				<section data-markdown style="width:120%; left:-14% ;font-size:24pt">
 					<script type="text/template" >
 					### Kommandozeile
 ```Python
@@ -302,12 +303,13 @@ if __name__ == "__main__":
 
 
 ```ini
-
 $ python argsch_demo.py
 	6
-
+```
+<!-- .element: class="fragment" -->
+```ini
 $ python argsch_demo.py  --h
-usage: argsch_demo.py [-h] [--a A] [--b B] [--input_json INPUT_JSON] [--output_json OUTPUT_JSON] [--log_level LOG_LEVEL]
+usage: argsch_demo.py [-h] [--a A] [--b B] [--input_json INPUT_JSON] [--output_json OUTPUT_JSON]
 
 options:
   -h, --help            show this help message and exit
@@ -319,13 +321,14 @@ TwoNumbers:
                         file path of input json file
   --output_json OUTPUT_JSON
                         file path to output json file
-  --log_level LOG_LEVEL
-                        set the logging level of the module (default=ERROR)
-
-
+```
+<!-- .element: class="fragment" -->
+```ini
 $ python argsch_demo.py --a 4
 	12
-
+```
+<!-- .element: class="fragment" -->
+```ini
 $ echo {\"b\": 5} > params.json
 $ python argsch_demo.py  --input_json params.json
 	10
@@ -335,12 +338,19 @@ $ python argsch_demo.py  --input_json params.json
 
 					</script>
 				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							### Vielen Dank
 
-				<section data-markdown>
-					<textarea data-template>
-						### NGFF
-						![img](img/ome-zarr1.webp)
-					</textarea>
+							#### Fragen?
+
+							---
+
+							### NGFF
+							![img](img/ome-zarr1.webp)
+						</textarea>
+					</section>
 				</section>
 
 
